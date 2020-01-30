@@ -1,48 +1,51 @@
 let deliveryCost;
+const CHINA = 'Китай';
+const CHILI = 'Чили';
+const AUSTRALIA = 'Австралия';
+const INDIA = 'Индия';
+const YAMAIKA = 'Ямайка';
+const cancelledByUser = 'Отменено пользователем!';
+const noDelivery = 'В вашей стране доставка не доступна';
 let message;
-const deliveryToChina = 'Китай';
-const deliveryToChili = 'Чили';
-const deliveryToAustralia = 'Австралия';
-const deliveryToIndia = 'Индия';
-const deliveryToYamaika = 'Ямайка';
+let countryName;
 const userChoise = prompt(
   'Введите название страны на русском языке, в которую будет произведена доставка товара:',
 );
 
 if (userChoise === null) {
-  message = 'Отменено пользователем!';
+  message = cancelledByUser;
 } else {
-  const messagePattern = `Доставка в ${userChoise.toUpperCase()} будет стоить ${deliveryCost} кредитов`;
+  countryName = userChoise[0].toUpperCase() + userChoise.slice(1).toLowerCase();
 
-  switch (userChoise.toLowerCase()) {
-    case deliveryToChina.toLowerCase():
+  switch (countryName) {
+    case CHINA:
       deliveryCost = 100;
-      message = messagePattern;
       break;
 
-    case deliveryToChili.toLowerCase():
+    case CHILI:
       deliveryCost = 250;
-      message = messagePattern;
       break;
 
-    case deliveryToAustralia.toLowerCase():
+    case AUSTRALIA:
       deliveryCost = 170;
-      message = messagePattern;
       break;
 
-    case deliveryToIndia.toLowerCase():
+    case INDIA:
       deliveryCost = 80;
-      message = messagePattern;
       break;
 
-    case deliveryToYamaika.toLowerCase():
+    case YAMAIKA:
       deliveryCost = 120;
-      message = messagePattern;
       break;
 
     default:
-      message = 'В вашей стране доставка не доступна';
+      message = noDelivery;
   }
+}
+
+if (deliveryCost > 0) {
+  const deliveryInfo = `Доставка в ${countryName} будет стоить ${deliveryCost} кредитов`;
+  message = deliveryInfo;
 }
 
 alert(message);

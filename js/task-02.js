@@ -1,12 +1,11 @@
-'use strict';
 const total = 100;
 const ordered = 80;
 let message;
 
 if (ordered > total) {
-    message = 'На складе недостаточно товаров!';
+  message = 'На складе недостаточно товаров!';
 } else {
-    message = 'Заказ оформлен, с вами свяжется менеджер';
+  message = 'Заказ оформлен, с вами свяжется менеджер';
 }
 console.log(message);
 
