@@ -5,7 +5,7 @@ const formatString = function(string) {
 
   if (characters.length > 40) {
     const charactersCutted = characters.splice(0, 40);
-    finalString = charactersCutted.join('');
+    finalString = charactersCutted.join('') + '...';
   }
   return finalString;
 };
