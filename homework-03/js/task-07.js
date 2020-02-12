@@ -40,12 +40,7 @@ const account = {
   },
 
   getTransactionDetails(id) {
-    for (let i = 0; i < this.transactions.length; i += 1) {
-      const transaction = this.transactions[i];
-      if (transaction.id === id) {
-        return transaction;
-      }
-    }
+    return this.transactions.find(elem => elem.id === id);
   },
 
   getTransactionTotal(type) {
@@ -65,5 +60,5 @@ console.log(account.getBalance());
 console.log(account.withdraw(100));
 console.log(account.getBalance());
 console.log(account.withdraw(1200));
-console.log(account.getTransactionTotal('withdraw'));
-console.log(account.getTransactionTotal('deposit'));
+console.log(account.getTransactionTotal(Transaction.WITHDRAW));
+console.log(account.getTransactionTotal(Transaction.DEPOSIT));

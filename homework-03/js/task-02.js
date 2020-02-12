@@ -1,9 +1,6 @@
 const countProps = obj => {
   const values = Object.values(obj);
-  let propNumber = 0;
-  for (let i = 0; i < values.length; i += 1) {
-    propNumber += 1;
-  }
+  const propNumber = values.length;
   return propNumber;
 };
 
