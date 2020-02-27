@@ -6,11 +6,11 @@ class Car {
     );
   }
 
-  constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
-    this.speed = speed;
+  constructor({ price, maxSpeed, distance = 0 }) {
+    this.speed = 0;
     this._price = price;
     this.maxSpeed = maxSpeed;
-    this.isOn = isOn;
+    this.isOn = false;
     this.distance = distance;
   }
 
@@ -32,14 +32,14 @@ class Car {
   }
 
   accelerate(value) {
-    this.speed = this.speed + value;
+    this.speed += value;
     if (this.speed > this.maxSpeed) {
       this.speed = this.maxSpeed;
     }
   }
 
   decelerate(value) {
-    this.speed = this.speed - value;
+    this.speed -= value;
     if (this.speed < 0) {
       this.speed = 0;
     }
@@ -47,7 +47,7 @@ class Car {
 
   drive(hours) {
     if (this.isOn) {
-      this.distance = this.distance + hours * this.speed;
+      this.distance += hours * this.speed;
     }
   }
 }
