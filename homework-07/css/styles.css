@@ -1,0 +1,53 @@
+body {
+  font-family: Robrto, sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#gallery {
+  display: flex;
+}
+.gallery__item-img {
+  height: 100%;
+}
+.gallery__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+#counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#value {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 30px;
+}
+button {
+  font-size: 30px;
+  /* width: 100px; */
+  padding: 10px;
+  background-color: rgb(196, 240, 248);
+}
+input {
+  padding: 10px;
+}
+#validation-input {
+  border: 3px solid #bdbdbd;
+  outline: none;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+#boxes > div {
+  border: 1px solid black;
+}
