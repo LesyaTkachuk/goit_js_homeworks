@@ -18,15 +18,13 @@ const images = [
 ];
 
 const gallery = document.querySelector('#gallery');
-const createItems = array => {
-  const string = array.reduce(
+const createItems = array =>
+  array.reduce(
     (items, { url, alt }) =>
       items +
       `<li class="gallery__item"><img class="gallery__item-img" src="${url}" alt="${alt}"/></li>`,
     '',
   );
-  return string;
-};
 const items = createItems(images);
 gallery.insertAdjacentHTML('afterbegin', items);
 console.log(gallery);
